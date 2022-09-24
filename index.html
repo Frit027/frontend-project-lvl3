@@ -2,12 +2,32 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>RSS-агрегатор</title>
   </head>
   <body>
-    <form>
-      <input type="text">
-      <button class="btn btn-primary" type="button">Добавить</button>
-    </form>
+    <main class="flex-grow-1">
+      <section class="container-fluid bg-dark p-5">
+        <div class="row">
+          <div class="col-md-10 col-lg-8 mx-auto text-white">
+            <h1></h1>
+            <p></p>
+            <form class="text-body">
+              <div class="row">
+                <div class="col">
+                  <div class="form-floating">
+                    <input class="form-control w-100" id="url-input" autocomplete="off" autofocus required>
+                    <label for="url-input">Ссылка RSS</label>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <button class="h-100 btn btn-lg btn-primary px-sm-5" type="submit">Добавить</button>
+                </div>
+              </div>
+            </form>
+            <p class="mt-2 mb-0 text-muted">Пример: https://ru.hexlet.io/lessons.rss</p>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
