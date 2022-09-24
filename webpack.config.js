@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './src/js/init.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
@@ -40,7 +40,6 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'RSS-агрегатор',
       template: path.resolve(__dirname, './index.html'),
       filename: 'index.html',
     }),
