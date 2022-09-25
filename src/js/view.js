@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import * as config from './constants';
 
 export default (path, value) => {
@@ -34,7 +35,7 @@ export default (path, value) => {
     }
   }
 
-  if (path === 'additionForm.errorMessage') {
-    form.parentNode.lastChild.textContent = value;
+  if (path === 'additionForm.errorKey') {
+    form.parentNode.lastChild.textContent = i18next.t(value);
   }
 };

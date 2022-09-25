@@ -5,7 +5,7 @@ import render from './view';
 
 export default (state) => {
   const schema = yup.object().shape({
-    url: yup.string().url('Ссылка должна быть валидным URL'),
+    url: yup.string().url('additionForm.errors.invalidUrl'),
   });
   const watchedState = onChange(state, render);
   const form = document.body.querySelector('form');
@@ -22,12 +22,12 @@ export default (state) => {
           watchedState.additionForm.state = config.formStates.valid;
           watchedState.additionForm.urls.push(data.url);
         } else {
-          throw new Error('RSS уже существует');
+          throw new Error('additionForm.errors.notUnique');
         }
       })
       .catch((error) => {
         watchedState.additionForm.state = config.formStates.invalid;
-        watchedState.additionForm.errorMessage = error.message;
+        watchedState.additionForm.errorKey = error.message;
       });
   });
 };
