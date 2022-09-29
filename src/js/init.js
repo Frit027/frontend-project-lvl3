@@ -16,6 +16,7 @@ import app from './index';
               invalidURL: 'Ссылка должна быть валидным URL',
               invalidRSS: 'Ресурс не содержит валидный RSS',
               notUnique: 'RSS уже существует',
+              errNetwork: 'Ошибка сети',
             },
             info: {
               uploadedRSS: 'RSS успешно загружен',

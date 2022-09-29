@@ -35,8 +35,11 @@ export default (state) => {
               watchedState.posts.push(...posts);
               watchedState.additionForm.state = config.formStates.valid;
             })
-            .catch(() => {
-              setError(watchedState, 'additionForm.errors.invalidRSS');
+            .catch((err) => {
+              setError(
+                watchedState,
+                err.code === 'ERR_NETWORK' ? 'additionForm.errors.errNetwork' : 'additionForm.errors.invalidRSS',
+              );
             });
         })
         .catch((error) => {
