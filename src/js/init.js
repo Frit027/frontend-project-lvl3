@@ -13,8 +13,12 @@ import app from './index';
         translation: {
           additionForm: {
             errors: {
-              invalidUrl: 'Ссылка должна быть валидным URL',
+              invalidURL: 'Ссылка должна быть валидным URL',
+              invalidRSS: 'Ресурс не содержит валидный RSS',
               notUnique: 'RSS уже существует',
+            },
+            info: {
+              uploadedRSS: 'RSS успешно загружен',
             },
           },
         },
@@ -25,9 +29,10 @@ import app from './index';
   const state = {
     additionForm: {
       state: config.formStates.valid,
-      urls: [],
       errorKey: '',
     },
+    feeds: [],
+    posts: [],
   };
 
   app(state);
