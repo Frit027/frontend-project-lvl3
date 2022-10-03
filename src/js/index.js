@@ -9,7 +9,6 @@ import render from './render';
 (async () => {
   await i18next.init({
     lng: 'ru',
-    debug: true,
     resources: {
       ru: {
         translation: {
@@ -19,10 +18,14 @@ import render from './render';
               invalidRSS: 'Ресурс не содержит валидный RSS',
               notUnique: 'RSS уже существует',
               errNetwork: 'Ошибка сети',
+              empty: 'Не должно быть пустым',
             },
             info: {
               uploadedRSS: 'RSS успешно загружен',
             },
+          },
+          buttons: {
+            openModal: 'Просмотр',
           },
         },
       },
