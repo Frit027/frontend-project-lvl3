@@ -1,7 +1,7 @@
 import differenceWith from 'lodash/differenceWith';
 import axiosXML from './network';
 import { getPosts } from './parser';
-import setError from './savingError';
+import setError from './error';
 
 export default (watchedState) => {
   watchedState.feeds.forEach((feed) => {
