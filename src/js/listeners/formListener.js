@@ -9,7 +9,10 @@ const isURLExist = (feeds, url) => feeds.map((feed) => feed.rssURL).includes(url
 
 export default (watchedState) => {
   const schema = yup.object().shape({
-    url: yup.string().url('additionForm.errors.invalidURL'),
+    url: yup
+      .string()
+      .required('additionForm.errors.empty')
+      .url('additionForm.errors.invalidURL'),
   });
   const state = watchedState;
 
