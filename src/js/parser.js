@@ -13,5 +13,6 @@ export const getPosts = (doc, feedID) => Array
     id: uniqueId(),
     feedID,
     title: item.querySelector('title').textContent,
+    description: item.querySelector('description').textContent,
     link: item.querySelector('link').textContent,
   }));
