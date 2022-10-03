@@ -1,4 +1,5 @@
 import initContainer from './container';
+import addOpenModalButtonListener from '../listeners/openModalButtonListener';
 
 const createA = ({ id, title, link }) => {
   const a = document.createElement('a');
@@ -22,15 +23,7 @@ const createButton = ({
   button.setAttribute('data-bs-target', '#modal');
   button.setAttribute('data-id', id);
   button.textContent = 'Просмотр';
-  button.addEventListener('click', () => {
-    document
-      .querySelector('.modal-footer > a')
-      .setAttribute('href', link);
-    const modalTitle = document.body.querySelector('.modal-title');
-    modalTitle.textContent = title;
-    const modalBody = document.body.querySelector('.modal-body');
-    modalBody.textContent = description;
-  });
+  addOpenModalButtonListener(button, title, description, link);
 
   return button;
 };
