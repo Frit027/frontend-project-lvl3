@@ -1,3 +1,4 @@
+import i18next from 'i18next';
 import initContainer from './container';
 import addOpenModalButtonListener from '../listeners/openModalButtonListener';
 
@@ -22,7 +23,7 @@ const createButton = ({
   button.setAttribute('data-bs-toggle', 'modal');
   button.setAttribute('data-bs-target', '#modal');
   button.setAttribute('data-id', id);
-  button.textContent = 'Просмотр';
+  button.textContent = i18next.t('buttons.openModal');
   addOpenModalButtonListener(button, title, description, link);
 
   return button;
