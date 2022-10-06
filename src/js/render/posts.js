@@ -1,6 +1,5 @@
 import i18next from 'i18next';
 import initContainer from './container';
-import addOpenModalButtonListener from '../listeners/openModalButtonListener';
 
 const createA = ({ id, title, link }) => {
   const a = document.createElement('a');
@@ -14,9 +13,7 @@ const createA = ({ id, title, link }) => {
   return a;
 };
 
-const createButton = ({
-  id, title, description, link,
-}) => {
+const createButton = ({ id }) => {
   const button = document.createElement('button');
   button.classList.add('btn', 'btn-outline-primary', 'btn-sm');
   button.setAttribute('type', 'button');
@@ -24,7 +21,6 @@ const createButton = ({
   button.setAttribute('data-bs-target', '#modal');
   button.setAttribute('data-id', id);
   button.textContent = i18next.t('buttons.openModal');
-  addOpenModalButtonListener(button, title, description, link);
 
   return button;
 };

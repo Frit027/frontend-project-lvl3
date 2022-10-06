@@ -1,3 +1,5 @@
+import find from 'lodash/find';
+
 export default (watchedState) => {
   const state = watchedState;
   document.body
@@ -6,6 +8,9 @@ export default (watchedState) => {
       const { id } = e.target.dataset;
       if (id) {
         state.readPostLinkID = id;
+        if (e.target.tagName === 'BUTTON') {
+          state.openedPostModal = find(state.posts, { id });
+        }
       }
     });
 };
