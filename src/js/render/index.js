@@ -3,6 +3,7 @@ import showFeedback from './feedback';
 import addFeed from './feeds';
 import addPosts from './posts';
 import readLink from './readLink';
+import openPostModal from './modal';
 
 export default (path, value, previousValue) => {
   if (path === 'additionForm.state') {
@@ -23,5 +24,9 @@ export default (path, value, previousValue) => {
 
   if (path === 'readPostLinkID') {
     readLink(value);
+  }
+
+  if (path === 'openedPostModal') {
+    openPostModal(value);
   }
 };
