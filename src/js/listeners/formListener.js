@@ -1,11 +1,14 @@
 import * as yup from 'yup';
+import uniqueId from 'lodash/uniqueId';
 import * as config from '../constants';
 import axiosXML from '../network';
-import { getFeed, getPosts } from '../parser';
+import getFeedWithPosts from '../parser';
 import setTimer from '../timer';
 import setError from '../error';
 
 const isURLExist = (feeds, url) => feeds.map((feed) => feed.rssURL).includes(url);
+
+const initPosts = (posts) => posts.map((post) => ({ ...post, id: uniqueId() }));
 
 export default (watchedState) => {
   const schema = yup.object().shape({
@@ -29,9 +32,9 @@ export default (watchedState) => {
           }
           axiosXML(data.url)
             .then((document) => {
-              const feed = getFeed(document, data.url);
+              const { feed, posts } = getFeedWithPosts(document, data.url);
               state.feeds.push(feed);
-              state.posts.push(...getPosts(document, feed.id));
+              state.posts.push(...initPosts(posts));
               state.additionForm.state = config.formStates.valid;
 
               setTimer(state);
