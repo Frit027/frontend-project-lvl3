@@ -5,30 +5,13 @@ import onChange from 'on-change';
 import * as config from './constants';
 import app from './app';
 import render from './render';
+import ru from './locales/ru';
 
 (async () => {
   await i18next.init({
     lng: 'ru',
     resources: {
-      ru: {
-        translation: {
-          additionForm: {
-            errors: {
-              invalidURL: 'Ссылка должна быть валидным URL',
-              invalidRSS: 'Ресурс не содержит валидный RSS',
-              notUnique: 'RSS уже существует',
-              errNetwork: 'Ошибка сети',
-              empty: 'Не должно быть пустым',
-            },
-            info: {
-              uploadedRSS: 'RSS успешно загружен',
-            },
-          },
-          buttons: {
-            openModal: 'Просмотр',
-          },
-        },
-      },
+      ru,
     },
   });
 
@@ -40,8 +23,9 @@ import render from './render';
     feeds: [],
     posts: [],
     readPostLinkID: null,
+    openedPostModal: null,
   };
-  const watchedState = onChange(state, render);
 
+  const watchedState = onChange(state, render);
   app(watchedState);
 })();
