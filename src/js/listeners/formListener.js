@@ -2,7 +2,7 @@ import * as yup from 'yup';
 import uniqueId from 'lodash/uniqueId';
 import * as config from '../constants';
 import axiosXML from '../network';
-import getFeedWithPosts from '../parser';
+import getParsedData from '../parser';
 import setTimer from '../timer';
 import setError from '../error';
 
@@ -32,9 +32,13 @@ export default (watchedState) => {
           }
           axiosXML(data.url)
             .then((document) => {
-              const { feed, posts } = getFeedWithPosts(document, data.url);
-              state.feeds.push(feed);
-              state.posts.push(...initPosts(posts));
+              const parsedData = getParsedData(document);
+              state.feeds.push({
+                title: parsedData.title,
+                description: parsedData.description,
+                rssURL: data.url,
+              });
+              state.posts.push(...initPosts(parsedData.items));
               state.additionForm.state = config.formStates.valid;
 
               setTimer(state);
