@@ -1,4 +1,3 @@
-import i18next from 'i18next';
 import initContainer from './container';
 
 const createA = ({ id, title, link }) => {
@@ -13,33 +12,32 @@ const createA = ({ id, title, link }) => {
   return a;
 };
 
-const createButton = ({ id }) => {
+const createButton = ({ id }, i18nextInstance) => {
   const button = document.createElement('button');
   button.classList.add('btn', 'btn-outline-primary', 'btn-sm');
   button.setAttribute('type', 'button');
   button.setAttribute('data-bs-toggle', 'modal');
   button.setAttribute('data-bs-target', '#modal');
   button.setAttribute('data-id', id);
-  button.textContent = i18next.t('buttons.openModal');
+  button.textContent = i18nextInstance.t('buttons.openModal');
 
   return button;
 };
 
-export default (newPosts, previousPosts) => {
-  const container = document.querySelector('.posts');
-  if (!container.hasChildNodes()) {
-    initContainer(container, 'Посты');
+export default (newPosts, previousPosts, { postsContainer }, i18nextInstance) => {
+  if (!postsContainer.hasChildNodes()) {
+    initContainer(postsContainer, 'Посты');
   }
 
   const liClassNames = [
     'list-group-item', 'd-flex', 'justify-content-between',
     'align-items-start', 'border-0', 'border-end-0',
   ];
-  const posts = newPosts
+  const lis = newPosts
     .slice(previousPosts.length, newPosts.length)
     .map((post) => {
       const a = createA(post);
-      const button = createButton(post);
+      const button = createButton(post, i18nextInstance);
       const li = document.createElement('li');
 
       li.classList.add(...liClassNames);
@@ -47,5 +45,5 @@ export default (newPosts, previousPosts) => {
 
       return li;
     });
-  container.querySelector('ul').prepend(...posts);
+  postsContainer.querySelector('ul').prepend(...lis);
 };

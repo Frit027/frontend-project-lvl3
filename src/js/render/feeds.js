@@ -1,9 +1,8 @@
 import initContainer from './container';
 
-export default (feed) => {
-  const container = document.querySelector('.feeds');
-  if (!container.hasChildNodes()) {
-    initContainer(container, 'Фиды');
+export default (feed, { feedsContainer }) => {
+  if (!feedsContainer.hasChildNodes()) {
+    initContainer(feedsContainer, 'Фиды');
   }
   const li = document.createElement('li');
   li.classList.add('list-group-item', 'border-0', 'border-end-0');
@@ -17,5 +16,5 @@ export default (feed) => {
   p.textContent = feed.description;
 
   li.append(h3, p);
-  container.querySelector('ul').prepend(li);
+  feedsContainer.querySelector('ul').prepend(li);
 };
