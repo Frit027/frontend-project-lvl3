@@ -3,7 +3,6 @@ import * as yup from 'yup';
 import * as config from './constants';
 import axiosXML from './network';
 import getParsedData from './parser';
-import setError from './error';
 
 const isURLExist = (feeds, url) => feeds.map((feed) => feed.rssURL).includes(url);
 
@@ -35,17 +34,20 @@ export default ({ form }, watchedState) => {
           });
           state.posts.push(...initPosts(parsedData.items));
           state.additionForm.state = config.formStates.valid;
+          state.network.state = config.networkStates.valid;
         })
         .catch((err) => {
-          setError(
-            state,
-            err.code === 'ERR_NETWORK'
-              ? 'additionForm.errors.errNetwork'
-              : 'additionForm.errors.invalidRSS',
-          );
+          if (err.code === 'ERR_NETWORK') {
+            state.network.state = config.networkStates.invalid;
+            state.network.errorKey = 'networkErrors.cannotLoad';
+          } else {
+            state.additionForm.state = config.formStates.invalid;
+            state.additionForm.errorKey = 'additionForm.errors.invalidRSS';
+          }
         });
     })
-    .catch((error) => {
-      setError(state, error.message);
+    .catch((err) => {
+      state.additionForm.state = config.formStates.invalid;
+      state.additionForm.errorKey = err.message;
     });
 };
