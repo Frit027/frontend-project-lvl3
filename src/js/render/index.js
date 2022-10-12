@@ -6,11 +6,11 @@ import addPosts from './posts';
 export default (elements, state, i18nextInstance) => onChange(
   state,
   (path, value, previousValue) => {
-    if (path === 'additionForm.state') {
+    if (path === 'additionForm.state' || path === 'network.state') {
       changeState(value, elements, i18nextInstance);
     }
 
-    if (path === 'additionForm.errorKey') {
+    if (path === 'additionForm.errorKey' || path === 'network.errorKey') {
       const { feedback } = elements;
       feedback.classList.replace('text-success', 'text-danger');
       feedback.textContent = i18nextInstance.t(value);
