@@ -1,7 +1,7 @@
 import * as config from './constants';
 
-export default (state, message) => {
-  const watchedState = state;
-  watchedState.additionForm.state = config.formStates.invalid;
-  watchedState.additionForm.errorKey = message;
+export default (watchedState, message) => {
+  const state = watchedState;
+  state.additionForm.state = config.formStates.invalid;
+  state.additionForm.errorKey = message;
 };
