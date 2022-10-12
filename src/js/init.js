@@ -12,6 +12,10 @@ export default async () => {
       state: config.formStates.valid,
       errorKey: '',
     },
+    network: {
+      state: config.networkStates.valid,
+      errorKey: '',
+    },
     feeds: [],
     posts: [],
     readPostLinkID: null,
