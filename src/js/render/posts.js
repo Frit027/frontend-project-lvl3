@@ -16,8 +16,6 @@ const createButton = ({ id }, i18nextInstance) => {
   const button = document.createElement('button');
   button.classList.add('btn', 'btn-outline-primary', 'btn-sm');
   button.setAttribute('type', 'button');
-  button.setAttribute('data-bs-toggle', 'modal');
-  button.setAttribute('data-bs-target', '#modal');
   button.setAttribute('data-id', id);
   button.textContent = i18nextInstance.t('buttons.openModal');
 
