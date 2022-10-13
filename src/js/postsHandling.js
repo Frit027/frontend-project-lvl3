@@ -6,6 +6,7 @@ export default (e, watchedState) => {
   if (id) {
     state.readPostLinkID = id;
     if (e.target.tagName === 'BUTTON') {
+      state.isModalOpen = true;
       state.openedPostModal = find(state.posts, { id });
     }
   }

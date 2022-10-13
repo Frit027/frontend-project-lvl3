@@ -18,6 +18,7 @@ export default async () => {
     },
     feeds: [],
     posts: [],
+    isModalOpen: false,
     readPostLinkID: null,
     openedPostModal: null,
   };
@@ -31,9 +32,14 @@ export default async () => {
     postsContainer: document.body.querySelector('.posts'),
     feedsContainer: document.body.querySelector('.feeds'),
 
+    modal: document.body.querySelector('.modal'),
     modalTitle: document.body.querySelector('.modal-title'),
     modalBody: document.body.querySelector('.modal-body'),
     modalReadButton: document.body.querySelector('.modal-footer > a'),
+    modalCloseButtons: [
+      document.body.querySelector('.modal-header > button'),
+      document.body.querySelector('.modal-footer > button'),
+    ],
   };
 
   const i18nextInstance = i18next.createInstance();
@@ -51,6 +57,12 @@ export default async () => {
 
   elements.postsContainer.addEventListener('click', (e) => {
     handlePosts(e, watchedState);
+  });
+
+  elements.modalCloseButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      watchedState.isModalOpen = false;
+    });
   });
 
   const delay = 5000;

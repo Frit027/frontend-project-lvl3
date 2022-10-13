@@ -30,6 +30,24 @@ export default (elements, state, i18nextInstance) => onChange(
       a.classList.add('fw-normal', 'link-secondary');
     }
 
+    if (path === 'isModalOpen') {
+      const { modal } = elements;
+      if (value) {
+        const div = document.createElement('div');
+        div.classList.add('modal-backdrop', 'fade', 'show');
+        document.body.append(div);
+
+        document.body.classList.add('modal-open');
+        modal.classList.remove('hide');
+        modal.classList.add('show', 'display');
+      } else {
+        document.body.querySelector('.modal-backdrop').remove();
+        modal.classList.remove('show');
+        modal.classList.replace('display', 'hide');
+        document.body.classList.remove('modal-open');
+      }
+    }
+
     if (path === 'openedPostModal') {
       const { modalTitle, modalBody, modalReadButton } = elements;
       modalTitle.textContent = value.title;
