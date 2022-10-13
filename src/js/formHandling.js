@@ -6,8 +6,6 @@ import getParsedData from './parser';
 
 const isURLExist = (feeds, url) => feeds.map((feed) => feed.rssURL).includes(url);
 
-const initPosts = (posts) => posts.map((post) => ({ ...post, id: uniqueId() }));
-
 export default ({ form }, watchedState) => {
   const state = watchedState;
   const schema = yup.object().shape({
@@ -32,7 +30,7 @@ export default ({ form }, watchedState) => {
             description: parsedData.description,
             rssURL: data.url,
           });
-          state.posts.push(...initPosts(parsedData.items));
+          state.posts.push(...parsedData.items.map((post) => ({ ...post, id: uniqueId() })));
           state.additionForm.state = config.formStates.valid;
           state.network.state = config.networkStates.valid;
         })
