@@ -1,1 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
+
+.display {
+  display: block;
+  padding-right: 17px;
+}
+
+.hide {
+  display: none;
+}
+
+.modal-open {
+  overflow: hidden;
+  padding-right: 17px;
+}
