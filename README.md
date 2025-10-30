@@ -23,7 +23,15 @@ https://feeds.arstechnica.com/arstechnica/index - News about information technol
 https://lorem-rss.herokuapp.com/feed?unit=second - Updates every second
 
 ## Demonstration
+#### Added RSS feeds
+The main page only has one URL input field. This allows you to add RSS feeds.
 
+![Main page with RSS](assets/list.png)
+
+#### Modal window
+Using a modal window you can read a brief summary of the news.
+
+![Modal](assets/modal.png)
 
 ## Dependencies
 **Node.js** v12.22.9 or later.
