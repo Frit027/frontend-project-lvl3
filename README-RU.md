@@ -35,7 +35,7 @@ https://lorem-rss.herokuapp.com/feed?unit=second - Обновления кажд
 npm i
 npm run build
 ```
-Откроейте файл [index.html](public/index.html) в браузере.
+Из созданной директории `public` откройте файл `index.html` в браузере.
 
 ## Используемые технологии и инструменты
 ### Основные

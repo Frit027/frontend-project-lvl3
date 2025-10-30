@@ -12,7 +12,7 @@
 ## About
 The website is an [RSS aggregator](https://en.wikipedia.org/wiki/News_aggregator) that accepts a link to an RSS resource
 and downloads all available news items.  
-New posts from the added feed appear dynamically on the page.
+New posts from the added feed appear dynamically on the page.  
 The user can read a preview of the news item in a modal window or follow the link to the original news item.
 
 ## Try
@@ -35,7 +35,7 @@ In the project root run the commands:
 npm i
 npm run build
 ```
-Open the file [index.html](public/index.html) in your browser.
+From the created `public` directory, open the `index.html` file in your browser.
 
 ## Technologies
 ### Main
