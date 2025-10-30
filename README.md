@@ -1,31 +1,44 @@
-[![Actions Status](https://github.com/Frit027/frontend-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/Frit027/frontend-project-lvl3/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/930caad48b51130a79af/maintainability)](https://codeclimate.com/github/Frit027/frontend-project-lvl3/maintainability)
+[![Actions Status](https://github.com/Frit027/frontend-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/Frit027/frontend-project-lvl3/actions)
 
-# RSS aggregator
+<h1>
+    <div align="right">
+        <code><a href="#"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/us.svg" width="32" alt="English" title="English"/></a></code>
+        <a href="README-RU.md"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons/flags/4x3/ru.svg" width="32" alt="Russian" title="Russian"/></a>
+    </div>
+    RSS aggregator
+</h1>
 
-## Description
-The project is a website with an [RSS aggregator](https://en.wikipedia.org/wiki/News_aggregator) and
-is available at the [link](https://frontend-project-lvl3-jade-one.vercel.app/).  
-The project code is written based on the [MVC pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller).
+## About
+The website is an [RSS aggregator](https://en.wikipedia.org/wiki/News_aggregator) that accepts a link to an RSS resource
+and downloads all available news items.  
+New posts from the added feed appear dynamically on the page.
+The user can read a preview of the news item in a modal window or follow the link to the original news item.
 
-### Sample data to test work
-- [RSS feed](https://74.ru/text/rss.region.xml) news site of the city of Chelyabinsk;
-- [RSS feed generator](https://github.com/mbertolacci/lorem-rss) updated at regular intervals.
+## Try
+The website is available at: https://frontend-project-lvl3-jade-one.vercel.app
 
-## Minimum requirements
-- Node.js v12.22.9 or later;
-- installed package [make](https://www.npmjs.com/package/make).
+#### Examples of RSS feeds to demonstrate how the application works
+https://feeds.arstechnica.com/arstechnica/index - News about information technology  
+https://lorem-rss.herokuapp.com/feed?unit=second - Updates every second
+
+## Demonstration
+
+
+## Dependencies
+**Node.js** v12.22.9 or later.
 
 ## Installation and Usage
 Clone the repository.  
 In the project root run the commands:
-```shell
-make install
+```console
+npm i
 npm run build
 ```
+Open the file [index.html](public/index.html) in your browser.
 
 ## Technologies
-### Frontend
+### Main
 - [Javascript ES6](https://www.w3schools.com/js/js_es6.asp)
 - [Bootstrap](https://getbootstrap.com/) `[5.0]`
 ### Module bundler
