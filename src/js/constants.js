@@ -1,10 +1,10 @@
 export const formStates = {
-  valid: 'valid',
-  check: 'check',
-  invalid: 'invalid',
+    valid: 'valid',
+    check: 'check',
+    invalid: 'invalid',
 };
 
 export const networkStates = {
-  valid: 'valid',
-  invalid: 'invalid',
+    valid: 'valid',
+    invalid: 'invalid',
 };
