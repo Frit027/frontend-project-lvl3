@@ -16,11 +16,13 @@ The project code is written based on the [MVC pattern](https://en.wikipedia.org/
 - Node.js v12.22.9 or later;
 - installed package [make](https://www.npmjs.com/package/make).
 
-## Installation and launch
-- clone the repository;
-- run commands:
-    - make install;
-    - npm run build.
+## Installation and Usage
+Clone the repository.  
+In the project root run the commands:
+```shell
+make install
+npm run build
+```
 
 ## Technologies
 ### Frontend
