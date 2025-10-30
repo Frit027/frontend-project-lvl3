@@ -23,7 +23,7 @@ https://feeds.arstechnica.com/arstechnica/index - News about information technol
 https://lorem-rss.herokuapp.com/feed?unit=second - Updates every second
 
 ## Demonstration
-#### Added RSS feeds
+#### RSS feeds
 The main page only has one URL input field. This allows you to add RSS feeds.
 
 ![Main page with RSS](assets/list.png)
