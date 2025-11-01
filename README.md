@@ -1,3 +1,5 @@
+[![Static Badge](https://img.shields.io/badge/node-%3E%3D22.11.0-brightgreen)](https://nodejs.org/en)
+[![Static Badge](https://img.shields.io/badge/npm-%3E%3D10.9.0-blue)](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 [![Maintainability](https://api.codeclimate.com/v1/badges/930caad48b51130a79af/maintainability)](https://codeclimate.com/github/Frit027/frontend-project-lvl3/maintainability)
 [![Actions Status](https://github.com/Frit027/frontend-project-lvl3/workflows/hexlet-check/badge.svg)](https://github.com/Frit027/frontend-project-lvl3/actions)
 
