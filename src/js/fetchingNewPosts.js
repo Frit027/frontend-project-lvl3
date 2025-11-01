@@ -6,6 +6,7 @@ import * as config from './constants';
 
 export default (watchedState) => {
     const state = watchedState;
+
     state.feeds.forEach((feed) => {
         axiosXML(feed.rssURL)
             .then((document) => {
