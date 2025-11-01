@@ -19,7 +19,7 @@ New posts from the added feed appear dynamically on the page.
 The user can read a preview of the news item in a modal window or follow the link to the original news item.
 
 ## Try
-The website is available at: https://frontend-project-lvl3-jade-one.vercel.app
+The website is available at: https://rss-aggregator-frit027.vercel.app
 
 #### Examples of RSS feeds to demonstrate how the application works
 https://feeds.arstechnica.com/arstechnica/index - News about information technology  
